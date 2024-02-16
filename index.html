@@ -223,6 +223,8 @@
     <script>
       const addTask = () => {
         const newTask = document.getElementById("new-task").value;
+        const date  = new Date();
+        const time = date.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});
 
         if (newTask.trim() !== "") {
           const taskList = document.getElementById("task-list");
@@ -233,7 +235,8 @@
             <i style="font-size:0.7rem; color:rgb(26, 17, 197);" class="material-icons">
               circle
             </i>&nbsp;
-            ${newTask}
+            ${newTask} 
+            <p style="color:grey; font-size:0.55rem; margin-left:10px; vertical-align: middle;">${time}</p>
           </span>
           <button class="remove-btn" onclick="removeTask(this)">
           <i style="color: crimson;" class="material-icons">delete</i>
